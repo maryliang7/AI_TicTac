@@ -1,11 +1,101 @@
+body {
+  background-image: url('ttt-bg.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'Lilita One';
+  min-width: 1400px;
+  min-height: 98vh;
+}
+
+.main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.main h1 {
+  margin: auto;
+  font-size: 60px;
+  text-shadow: 2px 2px 2px rgb(173, 169, 169);
+}
+
+#grid {
+  margin-top: 35px;
+  font-size: 70px;
+}
+
 section {
   display: flex;
   flex-direction: row;
 }
 
+.bottom {
+  border-bottom: 10px solid white;
+}
+
+.right {
+  border-right: 10px solid white;
+}
 .box {
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
+  height: 125px;
+  width: 125px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 2px rgb(173, 169, 169);
+
+}
+
+.game-over {
+  position: absolute;
+  border: 2px solid rgb(146, 64, 26);
+  height: 200px;
+  width: 400px;
+  top: 260px;
+  background-color: rgba(228, 191, 70, 0.9);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#message {
+  margin-top: 50px;
+  font-size: 30px;
+  color: rgb(146, 64, 26)
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#restart {
+  margin-top: 10px;
+  padding: 7px 10px;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 2px;
+  color: white;
+  background-color: rgba(228, 191, 70, 0.9);
+  font-weight: bold;
+}
+
+#restart:hover {
+  background-color: white;
+  color: rgba(228, 191, 70, 0.9)
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  margin-left: 45%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

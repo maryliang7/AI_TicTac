@@ -5,16 +5,16 @@ const PLAYER = {
 
 class Game {
   constructor() {
-    this.board = ['','','','','','','','',''];
-
     this.player = PLAYER.human;
-    this.gameState = true
     this.start()
   }
 
   start() {
+    this.gameState = true
+    this.board = ['','','','','','','','',''];
     this.boxes = document.querySelectorAll('.box')
     this.boxes.forEach(box => {
+      box.innerHTML = ''
       box.addEventListener('click', this.checkClick.bind(this))
     })
   }
@@ -23,7 +23,7 @@ class Game {
     if (this.player === PLAYER.ai || this.board[box.target.id] !== '' || !this.gameState) {
       return
     }
-      
+    
     this.board[box.target.id] = this.player;
     this.boxes[box.target.id].innerHTML = this.player;
 
@@ -46,15 +46,33 @@ class Game {
   gameOver(combo) {
     this.gameState = false;
     console.log(combo)
+    combo.forEach(idx => {
+      this.boxes[idx].style.color = "maroon"
+    })
     if (!combo.length) {
-      setTimeout(function () { alert("issa tie"); }, 0);
+      this.displayMessage("It's a tie!", combo)
     } else if (this.player === PLAYER.human) {
-      // alert('you win!')
-      setTimeout(function () { alert("you win!"); }, 0);
+      this.displayMessage("You win!!", combo)
     } else {
-      setTimeout(function () { alert("you lose :("); }, 0);
+      this.displayMessage("You lose :(", combo)
     }
   }
+
+  displayMessage(msg, combo) {
+    let endScreen = document.getElementById('game-over')
+    endScreen.classList.remove('hidden');
+    document.getElementById('message').innerHTML = msg;
+    document.getElementById('restart').addEventListener('click', ()=> {
+      endScreen.classList.add('hidden');
+      this.player = PLAYER.human;
+      this.start()
+      combo.forEach(idx => {
+        this.boxes[idx].style.color = "white"
+      })
+    })
+  }
+
+
 
   checkGame(board, sym) {
     let winCombo = this.checkRow(board, sym)

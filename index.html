@@ -6,28 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Tic Tac Toe</h1>
+  <div class="main">
+    <h1>Tic Tac Toe</h1>
+  
+    <div id="grid">
+      <section class="bottom">
+        <div class="box right" id="0"></div>
+        <div class="box right" id="1"></div>
+        <div class="box" id="2"></div>
+      </section>
+      <section class="bottom">
+        <div class="box right" id="3"></div>
+        <div class="box right" id="4"></div>
+        <div class="box" id="5"></div>
+      </section>
+      <section>
+        <div class="box right" id="6"></div>
+        <div class="box right" id="7"></div>
+        <div class="box" id="8"></div>
+      </section>
+  
+    </div>
 
-  <div id="grid">
-    <section>
-      <div class="box" id="0"></div>
-      <div class="box" id="1"></div>
-      <div class="box" id="2"></div>
-    </section>
-    <section>
-      <div class="box" id="3"></div>
-      <div class="box" id="4"></div>
-      <div class="box" id="5"></div>
-    </section>
-    <section>
-      <div class="box" id="6"></div>
-      <div class="box" id="7"></div>
-      <div class="box" id="8"></div>
-    </section>
+    <div id="game-over" class="hidden">
+      <div class="game-over">
+        <p id="message">Message</p>
+        <button id="restart"> Play Again! </button>
+      </div>
+    </div>
 
   </div>
+
+
   <script src="game.js"></script>
+  <footer>
+    <small>&copy Copyright 2019, Mary Liang</small>
+  </footer>
 </body>
 </html>

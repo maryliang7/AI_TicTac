@@ -1,0 +1,11 @@
+section {
+  display: flex;
+  flex-direction: row;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  cursor: pointer;
+}
